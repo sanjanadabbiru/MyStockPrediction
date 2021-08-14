@@ -1,0 +1,7 @@
+Status,Date,id,Ticker,Quantity,Cost
+buy,18/6/2021,Sanj,A,62,8321
+sell,19/6/2021,Sanj,AA,53,4567
+sell,19/6/2021,Sanj,A,60,3291
+buy,19/6/2021,Sanj,LEN,81,9444
+sell,20/6/2021,Sanj,LEN,80,7628
+buy,17/6/2021,Sanj,AA,78,7654

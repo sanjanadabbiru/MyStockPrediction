@@ -1,0 +1,5 @@
+Status,Date,id,Ticker,Quantity,Cost
+buy,17/6/2021,Shar,A,78,7629
+buy,17/6/2022,Shar,GFI,76,7500
+sell,19/6/2021,Shar,GFI,64,8400
+sell,18/6/2021,Shar,A,60,9000
