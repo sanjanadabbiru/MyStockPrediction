@@ -1,0 +1,14 @@
+
+
+body{
+    background:  #1e1e2f;
+    color: white; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+}
+
+.card{
+    border: none;  
+    background: #27293d;
+}
+
