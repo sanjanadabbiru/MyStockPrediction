@@ -1,0 +1,90 @@
+StockPredictionSystem
+	-->DataSet
+		-->ValidTickers()
+		-->Log.txt()
+	-->Executables
+		-->DataCollection()   	-DataSet Creation,Updation,ValidTickers updatation
+		-->DataPrediction ()		-UA model, LSTM model
+		-->DataConsolidation ()	-Select Favourable rows, create sorted list, create images
+	-->Predictions
+		-->LSTM() 			-Daily Predictions
+		-->UA()				-Daily Prediction
+		-->Images()			-Graphs of top buy suggestion of each day, array of 10buy
+		-->Consolidated() 	-Sorted rows in favourable predictions
+
+Models:
+Model: "UA"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm (LSTM)                  (None, 30, 50)            10400
+_________________________________________________________________
+dropout (Dropout)            (None, 30, 50)            0
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 30, 50)            20200
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 30, 50)            0
+_________________________________________________________________
+lstm_2 (LSTM)                (None, 30, 50)            20200
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 30, 50)            0
+_________________________________________________________________
+lstm_3 (LSTM)                (None, 50)                20200
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 50)                0
+_________________________________________________________________
+dense (Dense)                (None, 1)                 51
+=================================================================
+Total params: 71,051
+Trainable params: 71,051
+Non-trainable params: 0
+_________________________________________________________________
+
+
+Model: "LSTM"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+lstm (LSTM)                  (None, 30, 50)            10400
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 50)                20200
+_________________________________________________________________
+dense (Dense)                (None, 25)                1275
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 26
+=================================================================
+Total params: 31,901
+Trainable params: 31,901
+Non-trainable params: 0
+_________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Windows Connectivity for OpenSSH
+
+https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
+
+
+aws s3 cp s3://executablecode/DataPrediction.py /FYP/Executables/DataPrediction.py
+pip3 install keras pandas numpy sklearn
+pip3 install --no-cache-dir tensorflow	
+
+
+aws s3 cp s3://executablecode/FYP FYP --recursive
+
+nohup python3 DataPrediction.py > myprogram.out 2>myprogram.err &
